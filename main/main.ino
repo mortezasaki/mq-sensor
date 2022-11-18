@@ -1,9 +1,16 @@
-void setup() {
-  // put your setup code here, to run once:
+// Detect gas leakage with MQ sensor
 
+#define MQ_PIN A0
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(MQ_PIN, INPUT);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-
+void loop()
+{
+  int mqValue = analogRead(MQ_PIN);
+  Serial.println(mqValue);
+  delay(1000);
 }
